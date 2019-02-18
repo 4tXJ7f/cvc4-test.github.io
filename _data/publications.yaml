@@ -1,0 +1,1003 @@
+---
+references:
+- id: reynolds2017solving
+  type: article-journal
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: King
+    given: Tim
+  - family: Kuncak
+    given: Viktor
+  issued:
+  - year: 2017
+  title: Solving quantified linear arithmetic by counterexample-guided instantiation
+  container-title: Formal Methods in System Design
+  publisher: Springer US
+  page: 1-33
+  abstract: This paper presents a framework to derive instantiation-based decision
+    procedures for satisfiability of quantified formulas in first-order theories,
+    including its correctness, implementation, and evaluation. Using this framework
+    we derive decision procedures for linear real arithmetic (LRA) and linear integer
+    arithmetic (LIA) formulas with one quantifier alternation. We discuss extensions
+    of these techniques for handling mixed real and integer arithmetic, and to formulas
+    with arbitrary quantifier alternations. For the latter, we use a novel strategy
+    that handles quantified formulas that are not in prenex normal form, which has
+    advantages with respect to existing approaches. All of these techniques can be
+    integrated within the solving architecture used by typical SMT solvers. Experimental
+    results on standardized benchmarks from model checking, static analysis, and synthesis
+    show that our implementation in the SMT solver CVC4 outperforms existing tools
+    for quantified linear arithmetic.
+  URL: http://homepage.divms.uiowa.edu/~ajreynol/fmsd17-instla.pdf
+  DOI: 10.1007/s10703-017-0290-y
+
+- id: reynolds2017refutation
+  type: article-journal
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Kuncak
+    given: Viktor
+  - family: Tinelli
+    given: Cesare
+  - family: Barrett
+    given: Clark
+  - family: Deters
+    given: Morgan
+  issued:
+  - year: 2017
+  title: Refutation-based synthesis in smt
+  container-title: Formal Methods in System Design
+  publisher: Springer US
+  page: 1-30
+  abstract: We introduce the first program synthesis engine implemented inside an
+    SMT solver. We present an approach that extracts solution functions from unsatisfiability
+    proofs of the negated form of synthesis conjectures. We also discuss novel counterexample-guided
+    techniques for quantifier instantiation that we use to make finding such proofs
+    practically feasible. A particularly important class of specifications are single-invocation
+    properties, for which we present a dedicated algorithm. To support syntax restrictions
+    on generated solutions, our approach can transform a solution found without restrictions
+    into the desired syntactic form. As an alternative, we show how to use evaluation
+    function axioms to embed syntactic restrictions into constraints over algebraic
+    datatypes, and then use an algebraic datatype decision procedure to drive synthesis.
+    Our experimental evaluation on syntax-guided synthesis benchmarks shows that our
+    implementation in the CVC4 SMT solver is competitive with state-of-the-art tools
+    for synthesis.
+  URL: http://homepage.divms.uiowa.edu/~ajreynol/fmsd17.pdf
+
+- id: DBLP:journals/tplp/ReynoldsTB17
+  type: article-journal
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Barrett
+    given: Clark
+  issued:
+  - year: 2017
+  title: Constraint solving for finite model finding in SMT solvers
+  container-title: TPLP
+  page: 516-558
+  volume: '17'
+  issue: '4'
+  abstract: SMT solvers have been used successfully as reasoning engines for automated
+    verification and other applications based on automated reasoning. Current techniques
+    for dealing with quantified formulas in SMT are generally incomplete, forcing
+    SMT solvers to report ’unknown’ when they fail to prove the unsatisfiability of
+    a formula with quantifiers. This inability to return counter-models limits their
+    usefulness in applications that produce queries involving quantified formulas.
+    In this paper, we reduce these limitations by integrating finite model finding
+    techniques based on constraint solving into the architecture used by modern SMT
+    solvers. This approach is made possible by a novel solver for cardinality constraints,
+    as well as techniques for on-demand instantiation of quantified formulas. Experiments
+    show that our approach is competitive with the state of the art in SMT, and orthogonal
+    to approaches in automated theorem proving.
+  URL: https://doi.org/10.1017/S1471068417000175
+  DOI: 10.1017/S1471068417000175
+
+- id: DBLP:journals/jar/ReynoldsB17
+  type: article-journal
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Blanchette
+    given: Jasmin Christian
+  issued:
+  - year: 2017
+  title: A decision procedure for (co)datatypes in SMT solvers
+  container-title: J. Autom. Reasoning
+  page: 341-362
+  volume: '58'
+  issue: '3'
+  abstract: We present a decision procedure that combines reasoning about datatypes
+    and codatatypes. The dual of the acyclicity rule for datatypes is a uniqueness
+    rule that identifies observationally equal codatatype values, including cyclic
+    values. The procedure decides universal problems and is composable via the Nelson-Oppen
+    method. It has been implemented in CVC4, a state-of-the-art SMT solver. An evaluation
+    based on problems generated from formalizations developed with Isabelle demonstrates
+    the potential of the procedure.
+  URL: https://doi.org/10.1007/s10817-016-9372-6
+  DOI: 10.1007/s10817-016-9372-6
+
+- id: LRT+16
+  type: article-journal
+  author:
+  - family: Liang
+    given: Tianyi
+  - family: Reynolds
+    given: Andrew
+  - family: Tsiskaridze
+    given: Nestan
+  - family: Tinelli
+    given: Cesare
+  - family: Barrett
+    given: Clark
+  - family: Deters
+    given: Morgan
+  issued:
+  - year: 2016
+    month: 6
+  title: An efficient SMT solver for string constraints
+  container-title: Formal Methods in System Design
+  publisher: Springer US
+  page: 206-234
+  volume: '48'
+  issue: '3'
+  abstract: An increasing number of applications in verification and security rely
+    on or could benefit from automatic solvers that can check the satisfiability of
+    constraints over a rich set of data types that includes character strings. Until
+    recently, satisfiability solvers for strings were standalone tools that could
+    reason only about fairly restricted fragments of the theory of strings and regular
+    expressions such as, for instance, strings of bounded lengths. These solvers were
+    based on reductions to satisfiability problems over other data types, such as
+    bit vectors, or to automata decision problems. We present a set of algebraic techniques
+    for solving constraints over a rich theory of unbounded strings natively, without
+    reduction to other problems. These techniques can be used to integrate string
+    reasoning into general, multi-theory SMT solvers based on the DPLL(T) architecture.
+    We have implemented them in our SMT solver CVC4 to expand its already large set
+    of built-in theories to a theory of strings with concatenation, length, and membership
+    in regular languages. This implementation makes CVC4 the first solver able to
+    accept a rich set of mixed constraints over strings, integers, reals, arrays and
+    algebraic datatypes. Our initial experimental results show that, in addition,
+    over pure string problems, CVC4 is highly competitive with specialized string
+    solvers with a comparable input language.
+  keyword: String solving; Satisfiability Modulo Theories; Automated Deduction
+  URL: http://www.cs.stanford.edu/~barrett/pubs/LRT+16.pdf
+  DOI: 10.1007/s10703-016-0247-6
+  ISSN: 1572-8102
+
+- id: JB13
+  type: article-journal
+  author:
+  - family: Jovanovic
+    given: Dejan
+  - family: Barrett
+    given: Clark
+  issued:
+  - year: 2013
+    month: 2
+  title: Being careful about theory combination
+  container-title: Formal Methods in System Design
+  publisher: Springer US
+  page: 67-90
+  volume: '42'
+  issue: '1'
+  abstract: One of the main shortcomings of traditional methods for combining theories
+    is the complexity of guessing the arrangement of variables shared by the individual
+    theories. This paper presents a reformulation of the Nelson-Oppen method that
+    takes into account explicit equality propagation and can ignore pairs of shared
+    variables that the theories do not care about. We show the correctness of the
+    new approach and present care functions for the theory of uninterpreted functions
+    and the theory of arrays. The effectiveness of the new method is illustrated by
+    experimental results demonstrating a dramatic performance improvement on benchmarks
+    combining arrays and bit-vectors.
+  keyword: Theory combination; Nelson-Oppen; Satisfiability modulo theories
+  URL: http://www.cs.stanford.edu/~barrett/pubs/JB13.pdf
+  DOI: 10.1007/s10703-012-0159-z
+  ISSN: 0925-9856
+
+- id: RTJ+17
+  type: paper-conference
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Jovanović
+    given: Dejan
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Dixon
+    given: Clare
+  - family: Finger
+    given: Marcelo
+  issued:
+  - year: 2017
+    month: 9
+  title: Designing theory solvers with extensions
+  container-title: Proceedings of the 11th international symposium on frontiers of
+    combining systems (frocos ’17)
+  collection-title: Lecture notes in artificial intelligence
+  publisher: Springer
+  page: 22-40
+  volume: '10483'
+  note: Brasilia, Brazil
+  abstract: Satisfiability Modulo Theories (SMT) solvers have been developed to natively
+    support a wide range of theories, including linear arithmetic, bit-vectors, strings,
+    algebraic datatypes and finite sets. They handle constraints in these theories
+    using specialized theory solvers. In this paper, we overview the design of these
+    solvers, specifically focusing on theories whose function symbols are partitioned
+    into a base signature and an extended signature. We introduce generic techniques
+    that can be used in solvers for extended theories, including a new context-dependent
+    simplification technique and model-based refinement techniques. We provide case
+    studies showing our techniques can be leveraged for reasoning in an extended theory
+    of strings, for bit-vector approaches that rely on lazy bit-blasting and for new
+    approaches to non-linear arithmetic.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/RTJ+17.pdf
+
+- id: MRT+17
+  type: paper-conference
+  author:
+  - family: Meng
+    given: Baoluo
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Moura
+    given: Leonardo
+    dropping-particle: de
+  issued:
+  - year: 2017
+    month: 8
+  title: Relational constraint solving in smt
+  container-title: Proceedings of the 26th international conference on automated deduction
+    (cade ’17)
+  collection-title: Lecture notes in artificial intelligence
+  publisher: Springer
+  page: 148-165
+  volume: '10395'
+  note: Gothenburg, Sweden
+  abstract: Relational logic is useful for reasoning about computational problems
+    with relational structures, including high-level system design, architectural
+    con- figurations of network systems, ontologies, and verification of programs
+    with linked data structures. We present a modular extension of an earlier calculus
+    for the theory of finite sets to a theory of finite relations with such operations
+    as transpose, product, join, and transitive closure. We implement this extension
+    as a theory solver of the SMT solver CVC4. Combining this new solver with the
+    finite model finding features of CVC4 enables several compelling use cases. For
+    instance, native support for relations enables a natural mapping from Alloy, a
+    declarative modeling language based on first-order relational logic, to SMT constraints.
+    It also enables a natural encoding of several description logics with concrete
+    domains, allowing the use of an SMT solver to analyze, for instance, Web Ontology
+    Language (OWL) models. We provide an initial evaluation of our solver on a number
+    of Alloy and OWL models which shows promising results.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/MRT+17.pdf
+
+- id: EMT+17
+  type: paper-conference
+  author:
+  - family: Ekici
+    given: Burak
+  - family: Mebsout
+    given: Alain
+  - family: Tinelli
+    given: Cesare
+  - family: Keller
+    given: Chantal
+  - family: Katz
+    given: Guy
+  - family: Reynolds
+    given: Andrew
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Majumdar
+    given: Rupak
+  - family: Kuncak
+    given: Viktor
+  issued:
+  - year: 2017
+    month: 7
+  title: 'SMTCoq: A plug-in for integrating SMT solvers into Coq'
+  title-short: SMTCoq
+  container-title: Proceedings of the 29th international conference on computer aided
+    verification (cav ’17)
+  collection-title: Lecture notes in computer science
+  collection-number: '1'
+  publisher: Springer
+  page: 126-136
+  volume: '10426'
+  note: Heidelberg, Germany
+  abstract: This paper describes SMTCoq, a plug-in for the integration of external
+    solvers into the Coq proof assistant. Based on a checker for generic first-order
+    proof certificates fully implemented and proved correct in Coq, SMTCoq offers
+    facilities to check answers from external SAT and SMT solvers and to increase
+    Coq’s automation using such solvers, all in a safe way. The current version supports
+    proof certificates produced by the SAT solver ZChaff, for propositional logic,
+    and the SMT solvers veriT and CVC4, for the quantifier-free fragment of the combined
+    theory of fixed-size bit vectors, functional arrays with extensionality, linear
+    integer arithmetic, and uninterpreted function symbols.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/EMT+17.pdf
+
+- id: RWB+17
+  type: paper-conference
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Woo
+    given: Maverick
+  - family: Barrett
+    given: Clark
+  - family: Brumley
+    given: David
+  - family: Liang
+    given: Tianyi
+  - family: Tinelli
+    given: Cesare
+  editor:
+  - family: Majumdar
+    given: Rupak
+  - family: Kuncak
+    given: Viktor
+  issued:
+  - year: 2017
+    month: 7
+  title: Scaling up DPLL(T) string solvers using context-dependent simplification
+  container-title: Proceedings of the 29th international conference on computer aided
+    verification (cav ’17)
+  collection-title: Lecture notes in computer science
+  collection-number: '1'
+  publisher: Springer
+  page: 453-474
+  volume: '10426'
+  note: Heidelberg, Germany
+  abstract: Efficient reasoning about strings is essential to a growing number of
+    security and verification applications. We describe satisfiability checking techniques
+    in an extended theory of strings that includes operators commonly occurring in
+    these applications, such as contains, index of and replace. We introduce a novel
+    context-dependent simplification technique that improves the scalability of string
+    solvers on challenging constraints coming from real-world problems. Our evaluation
+    shows that an implementation of these techniques in the SMT solver CVC4 significantly
+    outperforms state-of-the-art string solvers on benchmarks generated using PyEx,
+    a symbolic execution engine for Python programs. Using a test suite sampled from
+    four popular Python packages, we show that PyEx uses only 41% of the runtime when
+    coupled with CVC4 than when coupled with CVC4’s closest competitor while achieving
+    comparable program coverage.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/RWB+17.pdf
+
+- id: KBT+16
+  type: paper-conference
+  author:
+  - family: Katz
+    given: Guy
+  - family: Barrett
+    given: Clark
+  - family: Tinelli
+    given: Cesare
+  - family: Reynolds
+    given: Andrew
+  - family: Hadarean
+    given: Liana
+  editor:
+  - family: Piskac
+    given: Ruzica
+  - family: Talupur
+    given: Muralidhar
+  issued:
+  - year: 2016
+    month: 10
+  title: Lazy proofs for DPLL(T)-based SMT solvers
+  container-title: Proceedings of the 16th international conference on formal methods
+    in computer-aided design (fmcad ’16)
+  publisher: FMCAD Inc.
+  page: 93-100
+  note: Mountain View, CA. Best paper award.
+  abstract: With the integration of SMT solvers into analysis frameworks aimed at
+    ensuring a system’s end-to-end correctness, having a high level of confidence
+    in these solvers’ results has become crucial. For unsatisfiable queries, a reasonable
+    approach is to have the solver return an independently checkable proof of unsatisfiability.
+    We propose a lazy, extensible and robust method for enhancing DPLL(T)-style SMT
+    solvers with proof-generation capabilities. Our method maintains separate Boolean-level
+    and theory-level proofs, and weaves them together into one coherent artifact.
+    Each theory-specific solver is called upon lazily, a posteriori, to prove precisely
+    those solution steps it is responsible for and that are needed for the final proof.
+    We present an implementation of our technique in the CVC4 SMT solver. CVC4 can
+    produce unsatisfiability proofs for quantifier-free queries involving uninterpreted
+    functions, arrays, bitvectors and combinations thereof. We discuss an evaluation
+    of our tool using industrial benchmarks and benchmarks from the SMT-LIB library,
+    which shows promising results.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/KBT+16.pdf
+
+- id: BRBT16
+  type: paper-conference
+  author:
+  - family: Bansal
+    given: Kshitij
+  - family: Reynolds
+    given: Andrew
+  - family: Barrett
+    given: Clark
+  - family: Tinelli
+    given: Cesare
+  editor:
+  - family: Olivetti
+    given: Nicola
+  - family: Tiwari
+    given: Ashish
+  issued:
+  - year: 2016
+    month: 6
+  title: A new decision procedure for finite sets and cardinality constraints in SMT
+  container-title: Proceedings of the 8th international joint conference on automated
+    reasoning (ijcar ’16)
+  collection-title: Lecture notes in computer science
+  publisher: Springer International Publishing
+  page: 82-98
+  volume: '9706'
+  note: Coimbra, Portugal
+  abstract: We consider the problem of deciding the theory of finite sets with cardinality
+    constraints in a satisfiability modulo theories solver. Sets are a common high-level
+    data structure used in programming; thus, such a theory is useful for modeling
+    program constructs directly. More importantly, sets are a basic construct of mathematics
+    and thus natural to use when mathematically defining the properties of a computer
+    system. We develop a calculus consisting of a modular combination of a procedure
+    for reasoning about membership constraints and a procedure for reasoning about
+    cardinality constraints. The reasoning for cardinality involves tracking how different
+    sets overlap. For efficiency, we avoid considering Venn regions directly, which
+    has been the approach in earlier work. Instead, we develop a novel technique wherein
+    potentially overlapping regions are considered incrementally. We use a graph to
+    track the interaction of the different regions. Early experimental results demonstrate
+    that the new technique is competitive with previous techniques and scales much
+    better on certain classes of problems.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/BRBT16.pdf
+  DOI: 10.1007/978-3-319-40229-1_7
+  ISBN: 978-3-319-40229-1
+
+- id: HBR+15
+  type: paper-conference
+  author:
+  - family: Hadarean
+    given: Liana
+  - family: Barrett
+    given: Clark
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Deters
+    given: Morgan
+  editor:
+  - family: Davis
+    given: Martin
+  - family: Fehnker
+    given: Ansgar
+  - family: McIver
+    given: Annabelle
+  - family: Voronkov
+    given: Andrei
+  issued:
+  - year: 2015
+    month: 11
+  title: Fine-grained SMT proofs for the theory of fixed-width bit-vectors
+  container-title: Proceedings of the 20th international conference on logic for programming,
+    artificial intelligence, and reasoning (lpar ’15)
+  collection-title: Lecture notes in computer science
+  publisher: Springer
+  page: 340-355
+  volume: '9450'
+  note: Suva, Fiji
+  abstract: Many high-level verification tools rely on SMT solvers to efficiently
+    discharge complex verification conditions. Some applications require more than
+    just a yes/no answer from the solver. For satisfiable quantifier-free problems,
+    a satisfying assignment is a natural artifact. In the unsatisfiable case, an externally
+    checkable proof can serve as a certificate of correctness and can be mined to
+    gain additional insight into the problem. We present a method of encoding and
+    checking SMT-generated proofs for the quantifier-free theory of fixed-width bitvectors.
+    Proof generation and checking for this theory poses several challenges, especially
+    for proofs based on reductions to propositional logic. Such reductions can result
+    in large resolution subproofs in addition to requiring a proof that the reduction
+    itself is correct. We describe a fine-grained proof system formalized in the LFSC
+    framework that addresses some of these challenges with the use of computational
+    side-conditions. We report results using a proof-producing version of the CVC4
+    SMT solver on unsatisfiable quantifier-free bit-vector benchmarks from the SMT-LIB
+    benchmark library.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/HBR+.pdf
+
+- id: LTR+15
+  type: paper-conference
+  author:
+  - family: Liang
+    given: Tianyi
+  - family: Tsiskaridze
+    given: Nestan
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Lutz
+    given: Carsten
+  - family: Ranise
+    given: Silvio
+  issued:
+  - year: 2015
+    month: 9
+  title: A decision procedure for regular membership and length constraints over unbounded
+    strings
+  container-title: Proceedings of the 10th international symposium on frontiers of
+    combining systems (frocos ’15)
+  collection-title: Lecture notes in artificial intelligence
+  publisher: Springer
+  page: 135-150
+  volume: '9322'
+  note: Wroclaw, Poland
+  abstract: We prove that the quantifier-free fragment of the theory of character
+    strings with regular language membership constraints and linear integer constraints
+    over string lengths is decidable. We do that by describing a sound, complete and
+    terminating tableaux calculus for that fragment which uses as oracles a decision
+    procedure for linear integer arithmetic and a number of computable functions over
+    regular expressions. A distinguishing feature of this calculus is that it provides
+    a completely algebraic method for solving membership constraints which can be
+    easily integrated into multi-theory SMT solvers. Another is that it can be used
+    to generate symbolic solutions for such constraints, that is, solved forms that
+    provide simple and compact representations of entire sets of complete solutions.
+    The calculus is part of a larger one providing the theoretical foundations of
+    a high performance theory solver for string constraints implemented in the SMT
+    solver CVC4.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/LTR+15.pdf
+  DOI: 10.1007/978-3-319-24246-0_9
+
+- id: RDK+15
+  type: paper-conference
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Deters
+    given: Morgan
+  - family: Kuncak
+    given: Viktor
+  - family: Barrett
+    given: Clark
+  - family: Tinelli
+    given: Cesare
+  editor:
+  - family: Kroening
+    given: Daniel
+  - family: Păsăreanu
+    given: Corina S.
+  issued:
+  - year: 2015
+    month: 7
+  title: Counterexample guided quantifier instantiation for synthesis in SMT
+  container-title: Proceedings of the 27th international conference on computer aided
+    verification (cav ’15)
+  collection-title: Lecture notes in computer science
+  collection-number: '2'
+  publisher: Springer
+  page: 198-216
+  volume: '9206'
+  note: San Francisco, CA
+  abstract: We introduce the first program synthesis engine implemented inside an
+    SMT solver. We present an approach that extracts solution functions from unsatisfiability
+    proofs of the negated form of synthesis conjectures. We also discuss novel counterexample-guided
+    techniques for quantifier instantiation that we use to make finding such proofs
+    practically feasible. A particularly important class of specifications are single-invocation
+    properties, for which we present a dedicated algorithm. To support syntax restrictions
+    on generated solutions, our approach can transform a solution found without restrictions
+    into the desired syntactic form. As an alternative, we show how to use evaluation
+    function axioms to embed syntactic restrictions into constraints over algebraic
+    datatypes, and then use an algebraic datatype decision procedure to drive synthesis.
+    Our experimental evaluation on syntax-guided synthesis benchmarks shows that our
+    implementation in the CVC4 SMT solver is competitive with state-of-the-art tools
+    for synthesis.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/RDK+15.pdf
+
+- id: BRK+15
+  type: paper-conference
+  author:
+  - family: Bansal
+    given: Kshitij
+  - family: Reynolds
+    given: Andrew
+  - family: King
+    given: Tim
+  - family: Barrett
+    given: Clark
+  - family: Wies
+    given: Thomas
+  editor:
+  - family: Kroening
+    given: Daniel
+  - family: Păsăreanu
+    given: Corina S.
+  issued:
+  - year: 2015
+    month: 7
+  title: Deciding local theory extensions via E-matching
+  container-title: Proceedings of the 27th international conference on computer aided
+    verification (cav ’15)
+  collection-title: Lecture notes in computer science
+  collection-number: '2'
+  publisher: Springer
+  page: 87-105
+  volume: '9206'
+  note: San Francisco, CA
+  abstract: Satisfiability Modulo Theories (SMT) solvers incorporate decision procedures
+    for theories of data types that commonly occur in software. This makes them important
+    tools for automating verification problems. A limitation frequently encountered
+    is that verification problems are often not fully expressible in the theories
+    supported natively by the solvers. Many solvers allow the specification of application-specific
+    theories as quantified axioms, but their handling is incomplete outside of narrow
+    special cases. In this work, we show how SMT solvers can be used to obtain complete
+    decision procedures for local theory extensions, an important class of theories
+    that are decidable using finite instantiation of axioms. We present an algorithm
+    that uses E-matching to generate instances incrementally during the search, significantly
+    reducing the number of generated instances compared to eager instantiation strategies.
+    We have used two SMT solvers to implement this algorithm and conducted an extensive
+    experimental evaluation on benchmarks derived from verification conditions for
+    heap-manipulating programs. We believe that our results are of interest to both
+    the users of SMT solvers as well as their developers.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/BRK+15.pdf
+
+- id: KBT14
+  type: paper-conference
+  author:
+  - family: King
+    given: Tim
+  - family: Barrett
+    given: Clark
+  - family: Tinelli
+    given: Cesare
+  issued:
+  - year: 2014
+    month: 10
+  title: Leveraging linear and mixed integer programming for SMT
+  container-title: Proceedings of the 14th international conference on formal methods
+    in computer-aided design (fmcad ’14)
+  publisher: FMCAD Inc.
+  page: 139-146
+  note: Lausanne, Switzerland
+  abstract: SMT solvers combine SAT reasoning with specialized theory solvers to either
+    find a feasible solution to a set of constraints or prove that no such solution
+    exists. Linear programming (LP) solvers come from the tradition of optimization,
+    and are designed to find feasible solutions that are optimal with respect to some
+    optimization function. Typical LP solvers are designed to solve large systems
+    quickly using floating point arithmetic. Because floating point arithmetic is
+    inexact, rounding errors can lead to incorrect results, making inexact solvers
+    inappropriate for direct use in theorem proving. Previous efforts to leverage
+    such solvers in the context of SMT have concluded that in addition to being potentially
+    unsound, such solvers are too heavyweight to compete in the context of SMT. In
+    this paper, we describe a technique for integrating LP solvers that dramatically
+    improves the performance of SMT solvers without compromising correctness. These
+    techniques have been implemented using the SMT solver CVC4 and the LP solver GLPK.
+    Experiments show that this implementation outperforms other state-of-the-art SMT
+    solvers on the QF\_LRA SMT-LIB benchmarks and is competitive on the QF\_LIA benchmarks.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/KBT14.pdf
+
+- id: HBJ+14
+  type: paper-conference
+  author:
+  - family: Hadarean
+    given: Liana
+  - family: Barrett
+    given: Clark
+  - family: Jovanović
+    given: Dejan
+  - family: Tinelli
+    given: Cesare
+  - family: Bansal
+    given: Kshitij
+  editor:
+  - family: Biere
+    given: Armin
+  - family: Bloem
+    given: Roderick
+  issued:
+  - year: 2014
+    month: 7
+  title: 'A tale of two solvers: Eager and lazy approaches to bit-vectors'
+  title-short: A tale of two solvers
+  container-title: Proceedings of the 26th international conference on computer aided
+    verification (cav ’14)
+  collection-title: Lecture notes in computer science
+  publisher: Springer
+  page: 680-695
+  volume: '8559'
+  note: Vienna, Austria
+  abstract: The standard method for deciding bit-vector constraints is via eager reduction
+    to propositional logic. This is usually done after first applying powerful rewrite
+    techniques. While often efficient in practice, this method does not scale on problems
+    for which top-level rewrites cannot reduce the problem size sufficiently. A lazy
+    solver can target such problems by doing many satisfiability checks, each of which
+    only reasons about a small subset of the problem. In addition, the lazy approach
+    enables a wide range of optimization techniques that are not available to the
+    eager approach. In this paper we describe the architecture and features of our
+    lazy solver (LBV). We provide a comparative analysis of the eager and lazy approaches,
+    and show how they are complementary in terms of the types of problems they can
+    efficiently solve. For this reason, we propose a portfolio approach that runs
+    a lazy and eager solver in parallel. Our empirical evaluation shows that the lazy
+    solver can solve problems none of the eager solvers can and that the portfolio
+    solver outperforms other solvers both in terms of total number of problems solved
+    and the time taken to solve them.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/HBJ+14.pdf
+
+- id: LRT+14
+  type: paper-conference
+  author:
+  - family: Liang
+    given: Tianyi
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Barrett
+    given: Clark
+  - family: Deters
+    given: Morgan
+  editor:
+  - family: Biere
+    given: Armin
+  - family: Bloem
+    given: Roderick
+  issued:
+  - year: 2014
+    month: 7
+  title: A DPLL(T) theory solver for a theory of strings and regular expressions
+  container-title: Proceedings of the 26th international conference on computer aided
+    verification (cav ’14)
+  collection-title: Lecture notes in computer science
+  publisher: Springer
+  page: 646-662
+  volume: '8559'
+  note: Vienna, Austria
+  abstract: An increasing number of applications in verification and security rely
+    on or could benefit from automatic solvers that can check the satisfiability of
+    constraints over a rich set of data types that includes character strings. Unfortunately,
+    most string solvers today are standalone tools that can reason only about (some
+    fragment) of the theory of strings and regular expressions, sometimes with strong
+    restrictions on the expressiveness of their input language. These solvers are
+    based on reductions to satisfiability problems over other data types, such as
+    bit vectors, or to automata decision problems. We present a set of algebraic techniques
+    for solving constraints over the theory of unbounded strings natively, without
+    reduction to other problems. These techniques can be used to integrate string
+    reasoning into general, multi-theory SMT solvers based on the DPLL(T) architecture.
+    We have implemented them in our SMT solver CVC4 to expand its already large set
+    of built-in theories to a theory of strings with concatenation, length, and membership
+    in regular languages. Our initial experimental results show that, in addition,
+    over pure string problems, CVC4 is highly competitive with specialized string
+    solvers with a comparable input language.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/LRT+14.pdf
+
+- id: KBD13
+  type: paper-conference
+  author:
+  - family: King
+    given: Timothy
+  - family: Barrett
+    given: Clark
+  - family: Dutertre
+    given: Bruno
+  issued:
+  - year: 2013
+    month: 10
+  title: Simplex with sum of infeasibilities for SMT
+  container-title: Proceedings of the 13th international conference on formal methods
+    in computer-aided design (fmcad ’13)
+  publisher: FMCAD Inc.
+  page: 189-196
+  note: Portland, Oregon
+  abstract: The de facto standard for state-of-the-art real and integer linear reasoning
+    within Satisfiability Modulo Theories (SMT) solvers is the Simplex for DPLL(T)
+    algorithm given by Dutertre and de Moura. This algorithm works by performing a
+    sequence of local optimization operations. While the algorithm is generally efficient
+    in practice, its local pivoting heuristics lead to slow convergence on some problems.
+    More traditional Simplex algorithms minimize a global criterion to determine the
+    feasibility of the input constraints. We present a novel Simplexbased decision
+    procedure for use in SMT that minimizes the sum of infeasibilities of the constraints.
+    Experimental results show that this new algorithm is comparable with or outperforms
+    Simplex for DPLL(T) on a broad set of benchmarks.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/KBD13.pdf
+
+- id: JBdM13
+  type: paper-conference
+  author:
+  - family: Jovanović
+    given: Dejan
+  - family: Barrett
+    given: Clark
+  - family: Moura
+    given: Leonardo
+    dropping-particle: de
+  issued:
+  - year: 2013
+    month: 10
+  title: The design and implementation of the model constructing satisfiability calculus
+  container-title: Proceedings of the 13th international conference on formal methods
+    in computer-aided design (fmcad ’13)
+  publisher: FMCAD Inc.
+  page: 173-180
+  note: Portland, Oregon
+  abstract: We present the design and implementation of the Model Constructing Satisfiability
+    (MCSat) calculus. The MCSat calculus generalizes ideas found in CDCL-style propositional
+    SAT solvers to SMT solvers, and provides a common framework where recent model-based
+    procedures and techniques can be justified and combined. We describe how to incorporate
+    support for linear real arithmetic and uninterpreted function symbols in the calculus.
+    We report encouraging experimental results, where MCSat performs competitive with
+    the state-of-the art SMT solvers without using pre-processing techniques and ad-hoc
+    optimizations. The implementation is flexible, additional plugins can be easily
+    added, and the code is freely available.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/JBdM13.pdf
+
+- id: RTG+13
+  type: paper-conference
+  author:
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  - family: Goel
+    given: Amit
+  - family: Krstic
+    given: Sava
+  - family: Deters
+    given: Morgan
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Bonacina
+    given: Maria Paola
+  issued:
+  - year: 2013
+  title: Quantifier instantiation techniques for finite model finding in SMT
+  container-title: Proceedings of the 24th international conference on automated deduction
+    (cade ’13)
+  collection-title: Lecture notes in computer science
+  publisher: Springer Berlin Heidelberg
+  page: 377-391
+  volume: '7898'
+  note: Lake Placid, NY
+  abstract: SMT-based applications increasingly rely on SMT solvers being able to
+    deal with quantified formulas. Current work shows that for formulas with quantifiers
+    over uninterpreted sorts counter-models can be obtained by integrating a finite
+    model finding capability into the architecture of a modern SMT solver. We examine
+    various strategies for on-demand quantifier instantiation in this setting. Here,
+    completeness can be achieved by considering all ground instances over the finite
+    domain of each quantifier. However, exhaustive instantiation quickly becomes unfeasible
+    with larger domain sizes. We propose instantiation strategies to identify and
+    consider only a selection of ground instances that suffices to determine the satisfiability
+    of the input formula. We also examine heuristic quantifier instantiation techniques
+    such as E-matching for the purpose of accelerating the search. We give experimental
+    evidence that our approach is practical for use in industrial applications and
+    is competitive with other approaches.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/RTG+13.pdf
+  DOI: 10.1007/978-3-642-38574-2_26
+  ISBN: 978-3-642-38573-5
+
+- id: JB11-FroCoS
+  type: paper-conference
+  author:
+  - family: Jovanović
+    given: Dejan
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Tinelli
+    given: Cesare
+  - family: Sofronie-Stokkermans
+    given: Viorica
+  issued:
+  - year: 2011
+    month: 10
+  title: 'Sharing is caring: Combination of theories'
+  title-short: Sharing is caring
+  container-title: Proceedings of the 8th international symposium on frontiers of
+    combining systems (frocos ’11)
+  collection-title: Lecture notes in computer science
+  publisher: Springer
+  page: 195-210
+  volume: '6989'
+  note: Saarbrücken, Germany
+  abstract: One of the main shortcomings of the traditional methods for combining
+    theories is the complexity of guessing the arrangement of the variables shared
+    by the individual theories. This paper presents a reformulation of the Nelson-Oppen
+    method that takes into account explicit equality propagation and can ignore pairs
+    of shared variables that the theories do not care about. We show the correctness
+    of the new approach and present care functions for the theory of uninterpreted
+    functions and the theory of arrays. The effectiveness of the new method is illustrated
+    by experimental results demonstrating a dramatic performance improvement on benchmarks
+    combining arrays and bit-vectors.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/JB11-FroCoS.pdf
+
+- id: BCD+11
+  type: paper-conference
+  author:
+  - family: Barrett
+    given: Clark
+  - family: Conway
+    given: Christopher L.
+  - family: Deters
+    given: Morgan
+  - family: Hadarean
+    given: Liana
+  - family: Jovanović
+    given: Dejan
+  - family: King
+    given: Tim
+  - family: Reynolds
+    given: Andrew
+  - family: Tinelli
+    given: Cesare
+  editor:
+  - family: Gopalakrishnan
+    given: Ganesh
+  - family: Qadeer
+    given: Shaz
+  issued:
+  - year: 2011
+    month: 7
+  title: CVC4
+  container-title: Proceedings of the 23rd international conference on computer aided
+    verification (cav ’11)
+  collection-title: Lecture notes in computer science
+  publisher: Springer
+  page: 171-177
+  volume: '6806'
+  note: Snowbird, Utah
+  abstract: CVC4 is the latest version of the Cooperating Validity Checker. A joint
+    project of NYU and U Iowa, CVC4 aims to support the useful feature set of CVC3
+    and SMT-LIBv2 while optimizing the design of the core system architecture and
+    decision procedures to take advantage of recent engineering and algorithmic advances.
+    CVC4 represents a completely new code base; it is a from-scratch rewrite of CVC3,
+    and many subsystems have been completely redesigned. Additional decision procedures
+    for CVC4 are currently under development, but for what it currently achieves,
+    it is a lighter-weight and higher-performing tool than CVC3. We describe the system
+    architecture, subsystems of note, and discuss some applications and continuing
+    work.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/BCD+11.pdf
+
+- id: JB10-LPAR
+  type: paper-conference
+  author:
+  - family: Jovanović
+    given: Dejan
+  - family: Barrett
+    given: Clark
+  editor:
+  - family: Fermüller
+    given: Christian G.
+  - family: Voronkov
+    given: Andrei
+  issued:
+  - year: 2010
+    month: 10
+  title: Polite theories revisited
+  container-title: Proceedings of the 17th international conference on logic for programming,
+    artificial intelligence, and reasoning (lpar ’10)
+  collection-title: Lecture notes in computer science
+  publisher: Springer
+  page: 402-416
+  volume: '6397'
+  note: Yogyakarta, Indonesia
+  abstract: The classic method of Nelson and Oppen for combining decision procedures
+    requires the theories to be stably-infinite. Unfortunately, some important theories
+    do not fall into this category (e.g. the theory of bit-vectors). To remedy this
+    problem, previous work introduced the notion of polite theories. Polite theories
+    can be combined with any other theory using an extension of the Nelson-Oppen approach.
+    In this paper we revisit the notion of polite theories, fixing a subtle flaw in
+    the original definition. We give a new combination theorem which specifies the
+    degree to which politeness is preserved when combining polite theories. We also
+    give conditions under which politeness is preserved when instantiating theories
+    by identifying two sorts. These results lead to a more general variant of the
+    theorem for combining multiple polite theories.
+  URL: http://www.cs.stanford.edu/~barrett/pubs/JB10-LPAR.pdf
+  ISBN: 3-642-16241-X, 978-3-642-16241-1
+  ISSN: 0302-9743
+...
