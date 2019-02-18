@@ -1,0 +1,37 @@
+devs:
+
+- fname: Martin
+  lname: Brain
+  affiliation: University of Oxford
+- fname: Tim
+  lname: King
+  website: http://www.cs.nyu.edu/~taking/
+  affiliation: New York University
+- fname: Paul
+  lname: Meng
+  website: http://homepage.divms.uiowa.edu/~bmeng/
+  affiliation: University of Iowa
+- fname: Aina
+  lname: Niemetz
+  website: https://cs.stanford.edu/~niemetz/
+  affiliation: Stanford University
+- fname: Mathias
+  lname: Preiner
+  website: https://cs.stanford.edu/~preiner/
+  affiliation: Stanford University
+- fname: Yoni
+  lname: Zohar
+  website: https://cs.stanford.edu/~yoniz/
+  affiliation: Stanford University
+- fname: Andrew
+  lname: Reynolds
+  website: http://cs.uiowa.edu/~ajreynol
+  affiliation: University of Iowa
+- fname: Haniel
+  lname: Barbosa
+  website: http://homepage.divms.uiowa.edu/~hbarbosa/
+  affiliation: University of Iowa
+- fname: Andres
+  lname: Nötzli
+  website: https://cs.stanford.edu/people/noetzli/
+  affiliation: Stanford University

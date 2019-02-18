@@ -1,1 +1,6 @@
+title: CVC4
+description: >-
+  An efficient open-source automatic theorem prover for satisfiability modulo
+  theories (SMT) problems.
+show_downloads: true
 theme: jekyll-theme-minimal
