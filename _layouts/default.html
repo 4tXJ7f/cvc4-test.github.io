@@ -23,7 +23,7 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% for item in site.data.menu.docs %}
-	<a href="{{ item.url }}">{{ item.title }}</a><br />
+          <a href="{{ item.url }}">{{ item.title }}</a><br />
         {% endfor %}
       </header>
       <section>

@@ -4,7 +4,7 @@
 body {
   background-color: #efefef;
   padding: 25px;
-  font: 16px/1.62 'Bitter', Georgia, 'Times New Roman', Times, serif;
+  font: 16px/1.62 'Noto Serif', serif;
   color: #454545;
   font-weight:400;
 }
@@ -74,16 +74,22 @@ blockquote {
 }
 
 code, pre {
-  font-family: Inconsolata, monospace;
-  color:#333;
+  font: 16px/1.62 'Noto Mono', monospace;
+  color: #333;
+  background: #f8f8f8;
+  border:1px solid #e5e5e5;
+  border-radius:5px;
+  padding: 3px;
 }
 
 pre {
   padding:8px 15px;
-  background: #f8f8f8;
-  border-radius:5px;
-  border:1px solid #e5e5e5;
   overflow-x: auto;
+}
+
+pre code {
+  border: 0px;
+  padding: 0px;
 }
 
 table {
@@ -180,6 +186,18 @@ strong {
   color:#222;
 }
 
+.warning {
+  background-color: #f8d7da;
+	padding: 10px;
+  border-radius: 5px;
+}
+
+.footnotes {
+  font-size:11px;
+  border-top: 1px solid #454545;
+  padding-top: 5px;
+}
+
 section {
   width:600px;
   float:right;
@@ -188,6 +206,21 @@ section {
 
 small {
   font-size:11px;
+}
+
+figcaption {
+  font-size:11px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+figure {
+  display: inline-block;
+  text-align: center;
+}
+
+figure img {
+  vertical-align: top;
 }
 
 hr {
@@ -203,6 +236,14 @@ footer {
   position:fixed;
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
+}
+
+a.footnote:before {   
+  content: "[";
+}
+
+a.footnote:after {
+  content: "]";
 }
 
 @media print, screen and (max-width: 960px) {

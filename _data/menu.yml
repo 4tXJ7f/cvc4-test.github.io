@@ -1,13 +1,16 @@
 docs:
 
+- title: News
+  url: /news.html
+
 - title: Releases 
-  url: releases.html
+  url: /releases.html
 
 - title: Publications
-  url: publications.html
+  url: /publications.html
 
 - title: People 
-  url: people.html
+  url: /people.html
 
 - title: History 
-  url: history.html
+  url: /history.html
