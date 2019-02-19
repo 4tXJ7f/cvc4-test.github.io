@@ -47,7 +47,8 @@ General documentation is available in the <a href="http://cvc4.cs.stanford.edu/w
 
 If you are citing CVC4, please use the following BibTex entry:
 
-<pre class="purebibtex">@inproceedings{BCD+11,
+~~~
+@inproceedings{BCD+11,
   url       = "<a href="http://www.cs.stanford.edu/~barrett/pubs/BCD+11.pdf">http://www.cs.stanford.edu/~barrett/pubs/BCD+11.pdf</a>",
   author    = "Clark Barrett and Christopher L. Conway and Morgan Deters and
                Liana Hadarean and Dejan Jovanovi{'{c}} and Tim King and
@@ -63,12 +64,18 @@ If you are citing CVC4, please use the following BibTex entry:
   year      = 2011,
   note      = "Snowbird, Utah",
   category  = "Conference Publications"
-}</pre>
+}
+~~~
+
+## Source Code
+
+The source code for CVC4 is available on
+[GitHub](https://github.com/CVC4/CVC4).
 
 ## Copyright
 
-Find copyright and (lack of) warranty information for CVC4 <a title="Copyright"
-href="copyright">here</a>.
+Find copyright and (lack of) warranty information for CVC4
+[here](https://github.com/CVC4/CVC4/blob/master/COPYING).
 
 ## Technical Support
 
