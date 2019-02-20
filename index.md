@@ -97,7 +97,7 @@ page</a>.
 - Francois Bobot, _The University of Iowa, Commissariat a l'Energie Atomique_
 - Martin Brain, _University of Oxford_
 - Christopher Conway, _New York University, Google_
-- Morgan Deters, _New York University_ (<a href="http://cvc4.cs.stanford.edu/web/in-memoriam-morgan-deters">in memoriam</a>)
+- Morgan Deters, _New York University_ ([in memoriam]({{ "in-memoriam-morgan-deters.html" | relative_url }}))
 - Liana Hadarean, _New York University, Mentor Graphics Corporation_
 - Dejan Jovanovic, _New York University, SRI International_
 - Guy Katz, _New York University, Stanford University_
