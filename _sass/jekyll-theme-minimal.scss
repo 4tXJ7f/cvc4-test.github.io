@@ -207,6 +207,26 @@ strong {
   margin-bottom: 15px;
 }
 
+.button {
+  padding: 5px;
+  background-color: #dd5424;
+  color: #efefef;
+  text-decoration:none;
+}
+
+a.button:hover {
+  padding: 5px;
+  background-color: #fefefe;
+  border: 1px solid #dd5424;
+  color: #dd5424;
+  text-decoration:none;
+}
+
+.tryonline {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 section {
   width:600px;
   float:right;
