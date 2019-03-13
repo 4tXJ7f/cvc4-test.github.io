@@ -4,7 +4,7 @@ layout: default
 
 # Publications
 
-{% assign years = site.data.publications.references | map: "issued" | map: "year" | uniq | rsort %}
+{% assign years = site.data.publications.references | map: "issued" | map: "year" | uniq | sort | reverse %}
 {% for year in years %}
 ## {{ year }}
 
