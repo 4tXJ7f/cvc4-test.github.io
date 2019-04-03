@@ -16,7 +16,7 @@ layout: default
 
 ---
 
-[macOS homebrew tap](https://github.com/CVC4/homebrew-cvc4)
+[macOS homebrew tap](/mac.html)
 
 ---
 
